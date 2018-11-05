@@ -1,0 +1,27 @@
+<% provide(:title, @user.firstname) %>
+<% if logged_in? %>
+<div class="container-cent">
+  <h1>Bonjour <strong> <%= @user.firstname%> <i class="em em-blush"></i> </strong> ! </h1>
+  <h3>Voilà quelques informations sur ton Profil : </h3>
+  <h2>Prénom : <%= @user.firstname%> </h2>
+  <h2>Nom : <%= @user.lastname%> </h2>
+  <h2>Email : <%= @user.email%> </h2>
+  
+  <%= link_to "Editer mon Profil", edit_user_path, class: "btn btn-info "%>
+  <%= link_to "Déconnexion", logout_path,class: "btn btn-danger ", method: :delete %>
+</div>
+</div>
+<% else %>
+<div class="container-cent">
+<h1 class="main-title"> <i class="em em-warning"></i> Connectez vous !  <i class="em em-warning"></i> </h1>
+</div>
+<% end %>
+
+
+
+
+
+
+
+
+

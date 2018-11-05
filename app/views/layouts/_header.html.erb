@@ -1,0 +1,25 @@
+<% if logged_in? %>
+<div class="header">
+    <div class="header-container">
+        <h1 class="header-title"><a href="/">TDD Project</a><i class="em em-wrench"></i></h1>
+        <div class="header-link">
+            <a class="header-link" href=""><%= link_to "Home",root_path %> <i class="fas fa-home"></i></a>
+            <a class="header-link" href=""><%= link_to "Club", club_path %><i class="fas fa-users"></i></a>
+            <a class="header-link" href=""><%= link_to "Profil", current_user %><i class="fas fa-user"></i></a>
+            <a class="header-link" href=""><%= link_to "Déconnexion", logout_path, method: :delete %><i class="far fa-trash-alt"></i></a>
+        </div>
+    </div>
+</div>
+
+<% else %>
+<div class="header">
+    <div class="header-container">
+        <h1 class="header-title"><a href="/">TDD Project</a><i class="em em-wrench"></i></h1>
+        <div class="header-link">
+            <a class="header-link" href="/login">Connexion <i class="fas fa-align-right"></i></a>
+            <a class="header-link" href="/signup">Inscription <i class="fas fa-book"></i></a>
+            <a class="header-link" href="/">Home <i class="fas fa-home"></i></a>
+        </div>
+    </div>
+</div>
+<% end %>

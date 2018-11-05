@@ -1,0 +1,33 @@
+<% provide(:title, "Editer mon profil") %>
+<% if logged_in? %>
+<h1 class="main-title">Mettre à jour votre profil</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+
+      <%= f.label :firstname %>
+      <%= f.text_field :firstname, class: 'form-control' %>
+
+      <%= f.label :lastname %>
+      <%= f.text_field :lastname, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit "Mettre à jour mon Profil", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
+<% else %>
+<div class="container-cent">
+<h1 class="main-title"> <i class="em em-warning"></i> Connectez vous !  <i class="em em-warning"></i> </h1>
+</div>
+<% end %>
