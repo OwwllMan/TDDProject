@@ -8,6 +8,7 @@
         <h4>Utilisateur n°<%= user.id%></h4>
         <h4>Nom <strong> <%= user.firstname%> </h4> </strong>
         <h4>Prénom <strong> <%= user.lastname%> </h4> </strong>
+        <a href= "<%= user_path(user.id)%>" class="btn btn-primary">Voir</a>
       </div>
     </div>
   <% end %>
